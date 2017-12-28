@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Target</title>
+ </head>
+<body>
+
+<h1>Target</h1>
+<p><em>_parent и _top, будут рассмотрены в статье про фреймы</em></p>
+<a href="http://ya.ru" target="_blank">Открыть страницу в новой вкладке</a>
+<p>
+<em>Каждый клик открывает новую вкладку</em>
+</p>
+<pre>&lt;a href="http://ya.ru" target="_blank"&gt;Открыть страницу<br>в новой вкладке&lt;/a&gt;</pre>
+
+<a href="http://ya.ru" target="_new">Открыть страницу в новой вкладке "new"</a>
+<p>
+<em>Каждый клик открывает документ в </em><strong>одной</strong><em>
+новой вкладке</em>
+</p>
+<pre>&lt;a href="http://ya.ru" target="_new"&gt;Открыть страницу в новой<br><br>вкладке "new"&lt;/a&gt;</pre>
+<p>Вместо <em>_new</em>, можно указать произвольное имя, кроме
+зарезервированных.
+</p>
+<a href="http://ya.ru" target="_search">Откроет yandex в новой</a>
+<pre>&lt;a href="http://ya.ru" target="_search"&gt;Откроет yandex в новой<br><br>вкладке&lt;/a&gt;</pre>
+
+<a href="http://google.ru/" target="_search">Откроет google во вкладке, где открыт яндекс</a>
+<pre>&lt;a href="http://google.ru" target="_search"&gt;Откроет google в<br>вкладке, где открыт яндекс&lt;/a&gt;</pre>
+
+<a avisited="red" href="http://ya.ru/" target="_top">Открыть страницу в текущей
+вкладке</a>
+<pre>&lt;a href="http://ya.ru/" target="_self"&gt;Открыть страницу в текущей вкладке&lt;/a&gt;</pre>
+<p><em>ИЛИ</em>
+</p>
+<pre>&lt;a href="http://ya.ru/"&gt;Открыть страницу в текущей вкладке&lt;/a&gt;</pre>
+<p><em>Т.к. <em>self</em> является значением по умолчанию.</em></p>
+</body>
+</html>

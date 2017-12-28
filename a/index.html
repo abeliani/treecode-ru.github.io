@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>ДЕМО - URL: всё о гиперссылках</title>
+   <style>
+   a[type="image/jpg"]{
+    background: url(picture.png) no-repeat 100%;
+	padding: 0 30px 0 0;}
+	a[hreflang="en"]{
+    background: url(united.png) no-repeat 100%;
+	padding: 0 30px 0 0;}
+	a[hreflang="ru"]{
+    background: url(russian.png) no-repeat 100%;
+	padding: 0 30px 0 0;}
+   </style> 
+  </head>
+  <body>
+  <ul>
+ <li><a href="#anchor" tabindex="8">Создание закладок, якорей, anchor</a></li>
+ <li><a href="#href" tabindex="4">Адрес ссылки Href</a></li>
+ <li><a href="target.html" tabindex="7" target="_blank">Где открывать ссылку Target</a></li>
+ <li><a href="#title" tabindex="3">Простая подсказка к ссылке Title</a></li>
+ <li><a href="#rel" tabindex="6">Отношения Rel</a></li>
+ <li><a href="#accesskey" tabindex="2">Сочетания клавиш Accesskey</a></li>
+ <li><a href="#type" tabindex="5">Стили и выдача файла на скачивание Type</a></li>
+ <li><a href="#hreflang" tabindex="5">Стили hreflang</a></li>
+  </ul>
+<h1 id="anchor">Якори</h1>
+<hr />
+  <p><em id="anchor">Нажимайте <strong>Tab</strong>, чтобы проверить <strong>Tabindex</strong>.</em>
+</p>
+  <pre>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#anchor&quot; tabindex=&quot;8&quot;&gt;Создание закладок, якорей, anchor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#href&quot; tabindex=&quot;4&quot;&gt;Адрес ссылки Href&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;target.html&quot; tabindex=&quot;7&quot; target=&quot;_blank&quot;&gt;Где открывать ссылку Target&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#title&quot; tabindex=&quot;3&quot;&gt;Простая подсказка к ссылке Title&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#rel&quot; tabindex=&quot;6&quot;&gt;Отношения Rel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#accesskey&quot; tabindex=&quot;2&quot;&gt;Сочетания клавиш Accesskey&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#type&quot; tabindex=&quot;5&quot;&gt;Стили и выдача файла на скачивание Type&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#media&quot; tabindex=&quot;1&quot;&gt;Стили на основе Media&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt; </pre>
+<h1 id="href">Href</h1>
+<hr />
+<h3 id="href">Абсолютные ссылки</h3>
+<p>Абсолютный путь расчитывается от корня диска или сервера</p>
+<ul>
+<li><a href="C:/server/domain/example/url/index.html" target="_blank">От корня</a></li>
+<pre>&lt;a href="C:/server/domain/example/url/index.html" target="_blank"&gt;Абсолютный путь&lt;/a&gt;</pre>
+<p><em>Мой сервер расположен по адресу: <b>C:/server/domain/example/url/</b></em>.</p>
+Вам необходимо изменить абсолютный путь ссылки на свой (например): <b>C:/User/Einstein/downloads/258df9f6rt_01012000/index.html</b></em></p>
+<li><a href="http://yandex.ru/robots.txt" target="_blank">От сервера</a></li>
+<pre>&lt;a href="http://yandex.ru/robots.txt" target="_blank"&gt;От сервера&lt;/a&gt;</pre>
+</ul>
+
+<h3>Относительные ссылки</h3>
+<p>Относительный путь рассчитывается от адреса текущего файла или входного скрипта.</p>
+<ul>
+<li><a href="/target.html" target="_blank">От текущего файла</a></li>
+<pre>&lt;a href="/target.html" target="_blank"&gt;От текущего файла&lt;/a&gt;</pre>
+<p><em>Если файл <b>target.html</b> расположен в той же директории, что и текущий файл</em>.</p>
+<p><em>Если текущий файл расположен в поддиректории и нужно обратится к файлу выше по иерархии, <br />
+то используйте двоеточие: <b>..</b></em>.</p>
+<pre>&lt;a href="../../report.html" target="_blank"&gt;От файла в поддиректории&lt;/a&gt;</pre>
+<p><em>В примере выше, мы выходим на два уровня вверх</em>. Если текущий файл:<em>webRoot/dir/subdir/current.html</em><br />
+и мы обращаемся по указанному в примере адресу, то вызов произойдет из <em>webRoot/report.html</em>
+</p>
+
+<pre>&lt;a href="/dir/report.html" target="_blank"&gt;от текущего файла&lt;/a&gt;</pre>
+<p><em>В данном примере мы рассмотрели обращение к документу расположенному в директории относительно текущего:<em>webRoot/dir/subdir/current.html</em><br />
+и мы обращаемся по указанному в примере адресу, то вызов произойдет из <em>webRoot/report.html</em>
+</p>
+
+<li><a href="/uploads/image.jpg" target="_blank">На картинку в папке</a></li>
+<pre>&lt;a href="/uploads/image.jpg" target="_blank"&gt;На картинку в папке&lt;/a&gt;</pre>
+<p><b>В примере данный путь отсутствует! Создайте папку "uploads" и скопируйте в нее файл "image.jpg"</b></p>
+<li><pre>&lt;a href="/target.html" target="_blank"&gt;От входного скрипта&lt;/a&gt;</pre></li>
+<p><em>Обычно, входной скрипт находится в корне web приложения, фактически, все относительные пути<br />
+расчитываются от корня приложения, в таком случае.</em>.</p>
+</ul>
+<h1 id="title">Простая подсказка к ссылке</h1>
+<hr />
+<p><a href="http://yandex.ru" title="Российский поисковик" target="_blank">Наведите на ссылку</a>
+</p>
+<pre>&lt;a href=&quot;http://yandex.ru&quot; title=&quot;Российский поисковик&quot; target=&quot;_blank&quot;&gt;Наведите на ссылку&lt;/a&gt;</pre>
+<h1 id="rel">Отношения rel</h1>
+<hr />
+<p><em>Мы рассмотрели на сайте пример с СЕО отношениями к поисковикам. Теперь мы рассмотрим вариант прямого назначения тега.</em></p>
+<p><a href="http://yandex.ru" rel="acquaintance colleague neighbor" target="_blank">По ссылке документ нашего знакомого, коллеги и соседа</a></p>
+<pre>&lt;a href=&quot;http://yandex.ru&quot; rel="acquaintance colleague neighbor" target=&quot;_blank&quot;&gt;По ссылке документ нашего знакомого, коллеги и соседа&lt;/a&gt;</pre>
+<em>Не стану дублировать документацию, самое главное, что принцип ясен. Можно указывать оригинальные статьи или полные статьи на своем сайте. В общем, сколько есть фантазии.</em>
+<h1 id="accesskey">Активация ссылки по сочетанию кавиш</h1>
+<hr />
+<pre>
+Internet Explorer, Chrome, Safari, Opera 15+: Alt + accesskey;
+FireFox и Opera 12 нужно нажать: Alt + Shift + accesskey;
+Mac, сочетание клавиш: Control + Alt + accesskey" 
+</pre>
+<p>
+Создам две ссылки на <strong>Yandex</strong> и <strong>Google</strong>
+</p>
+<p><a href="http://yandex.ru" accesskey="y" target="_search">Yandex - accesskey = y</a></p>
+<p>&lt;a href=&quot;yandex.ru&quot; accesskey=&quot;y&quot; target=&quot;_search&quot;&gt;Yandex - accesskey = y&lt;/a&gt;</p>
+<p><a href="http://google.ru" accesskey="g" target="_search">Google - accesskey = g</a></p>
+<p>&lt;a href=&quot;google.ru&quot; accesskey=&quot;g&quot; target=&quot;_search&quot;&gt;Google - accesskey = g&lt;/a&gt;</p>
+<p>Горячая клавиша для открытия блога = <em><strong>b</strong></em></p>
+
+<h1 id="type">Стилизация ссылки и выдача файла на скачивание</h1>
+<hr />
+<p><a href="image.jpg" type="image/jpg" target="_blank">Открыть картинку в новой вкладке</a></p>
+<pre>&lt;a href=&quot;image.jpg&quot; type="image/jpg" target=&quot;_blank&quot;&gt;Открыть картинку в новой вкладке&lt;/a&gt;
+</pre>
+  <p>Мы использовали стили</p>
+<pre>&lt;style&gt;
+a[type=&quot;image/jpg&quot;]{
+background: url(picture.png) no-repeat 100%;
+padding: 0 30px 0 0;}
+&lt;/style&gt;</pre>
+<p><a href="image.jpg" type="octet-content/stream" target="_blank">Скачать картинку!</a></p>
+<pre>&lt;a href=&quot;image.jpg&quot; type=&quot;octet-content/stream&quot; target=&quot;_blank&quot;&gt;Скачать картинку!&lt;/a&gt;</pre>
+<h1 id="hreflang">Стилизация по языку документа</h1>
+<hr />
+<p><a href="http://yahoo.com" hreflang="en" target="_blank">Сайт Yahoo на английском</a>
+</p>
+<p><a href="http://yandex.ru" hreflang="ru" target="_blank">Сайт Яндекс на русском</a></p>
+<p><em>Мы использовали стили:</em></p>
+<pre>&lt;style&gt;
+a[hreflang=&quot;en&quot;]{
+background: url(united.png) no-repeat 100%;
+padding: 0 30px 0 0;}
+a[hreflang=&quot;ru&quot;]{
+background: url(russian.png) no-repeat 100%;
+padding: 0 30px 0 0;}
+&lt;/style&gt;</pre>
+<hr />
+<p><strong>На этом всё!</strong></p>
+<a href="http://treecode.webtm.ru" accesskey="b" target="_blank">Посетите мой блог</a>
+  </body>
+</html>
